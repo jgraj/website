@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
     <style type="text/css">
         body {
+            margin: 0;
             background-image: url("data:image/png;base64,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");
             font-family: monospace;
         }
@@ -15,5 +16,12 @@
 </head>
 
 <body>
-    <h1>Hello, World!</h1>
+    <h1>☕ sipping</h1>
+    <h2>working on <a href="https://cup-lang.org">cup-lang</a></h2>
+    <a href="https://github.com/jgrajewsky">Github</a>
+    <a href="https://twitter.com/jgrajewsky">Twitter</a>
+    <a href="https://reddit.com/u/jgrajewsky">Reddit</a>
+    <a href="https://steamcommunity.com/id/jgrajewsky">Steam</a>
+    <a href="https://twitch.tv/jgrajewsky">Twitch</a>
+    <a href="https://www.youtube.com/channel/UClHxGcNwgofv9BmQd75fslQ">YouTube</a>
 </body>
