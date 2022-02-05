@@ -4,11 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    
     <title>jgrajewsky</title>
+    
+    <style type="text/css">
+        body {
+            font-family: monospace;
+            background: #ccc;
+        }
+        
+        h2, a {
+            color: #000;
+        }
+        
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .hidden {
+            color: #b9b9b9;
+            user-select: none;
+        }
+    </style>
 </head>
 
-<body style="font-family:monospace;background:#ccc">
-    <h1>☕ sipping</h1>
+<body>
     <h2>working on <a href="https://cup-lang.org">cup-lang</a></h2>
     <hr>
     <a href="mailto:jgrajewsky@airmail.cc">email</a>
@@ -19,10 +42,9 @@
     <a href="https://twitch.tv/jgrajewsky">twitch</a>
     <a href="https://youtube.com/channel/UClHxGcNwgofv9BmQd75fslQ">youtube</a>
     <a href="https://steamcommunity.com/id/jgrajewsky">steam</a>
-    <a href="https://paypal.me/jgrajewsky">paypal</a>
-    <p style="display:flex;flex-direction:column;position:absolute;bottom:0">
-        <a style="color:#b9b9b9;user-select:none" href="/simplicity.mp4">on simplicity</a>
-        <a style="color:#b9b9b9;user-select:none" href="/learn_programming.mp4">learn programming</a>
+    <p class="bottom">
+        <a class="hidden" href="/simplicity.mp4">on simplicity</a>
+        <a class="hidden" href="/learn_programming.mp4">learn programming</a>
     </p>
 </body>
 
