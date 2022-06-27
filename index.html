@@ -14,6 +14,24 @@
             color: #000;
         }
         
+        #key {
+            width: min-content;
+            white-space: pre-line;
+            background: #a9a9a9;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        #bottom {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 0 10px 10px 10px;
+            box-sizing: border-box;
+            background: inherit;
+        }
+        
         .hidden {
             color: #000;
             opacity: 0.1;
@@ -24,10 +42,10 @@
 </head>
 
 <body>
-    <h1>working on <a href="https://cup-lang.org" title="Cup Language" target="_blank" rel="noopener">Cup Language</a></h1>
+    <h1>working on <a href="https://cup-lang.org" title="Cup Language" target="_blank" rel="noopener">cup-lang</a></h1>
     <details>
         <summary>public key</summary>
-        <pre>-----BEGIN PGP PUBLIC KEY BLOCK-----
+        <span id="key">-----BEGIN PGP PUBLIC KEY BLOCK-----
         mQINBGIUPAgBEAC6TGnATUAnAz/5bv5uW3gQ/Z2Wcui2k6jFeEK8+KEZ4JxJ5N79
         vRmsJ8D/jROQxuPJ6BpKx2VA3gPipPSy3SOr0hKMwELRwzqUOVqKnS6svRGXkCr4
         uoCQpu+GRgX9Do0avlFmwM3yY67ewq3D1avgWtDIn6+dIpSMf6yFLvkgm0Povc2f
@@ -76,19 +94,21 @@
         FE2+1X7diZzBRrDzDTF6PGJp3fwRAcyo7oDiacxNlS11qSPHBGw+R6/unHojUfV7
         FvHtAOyDrK6YLsiv2R+y7N5EF7SAAtRtQuSXVLjdpjbO908i09j1glc26B7aVeLh
         =Vdf5
-        -----END PGP PUBLIC KEY BLOCK-----</pre>
+        -----END PGP PUBLIC KEY BLOCK-----</span>
     </details>
-    <hr>
-    <a href="mailto:me@jgrajewsky.com">email</a>
-    <a href="https://github.com/jgrajewsky">github</a>
-    <a href="https://twitter.com/jgrajewsky">twitter</a>
-    <a href="https://keybase.io/jgrajewsky">keybase</a>
-    <a href="https://reddit.com/u/jgrajewsky">reddit</a>
-    <a href="https://twitch.tv/jgrajewsky">twitch</a>
-    <a href="https://youtube.com/channel/UClHxGcNwgofv9BmQd75fslQ">youtube</a>
-    <a href="https://steamcommunity.com/id/jgrajewsky">steam</a>
-    <a class="hidden" href="/simplicity.mp4">on simplicity</a>
-    <a class="hidden" href="/learn_programming.mp4">learn programming</a>
+    <div id="bottom">
+        <hr>
+        <a href="mailto:me@jgrajewsky.com">email</a>
+        <a href="https://github.com/jgrajewsky">github</a>
+        <a href="https://twitter.com/jgrajewsky">twitter</a>
+        <a href="https://keybase.io/jgrajewsky">keybase</a>
+        <a href="https://reddit.com/u/jgrajewsky">reddit</a>
+        <a href="https://twitch.tv/jgrajewsky">twitch</a>
+        <a href="https://youtube.com/channel/UClHxGcNwgofv9BmQd75fslQ">youtube</a>
+        <a href="https://steamcommunity.com/id/jgrajewsky">steam</a>
+        <a class="hidden" href="/simplicity.mp4">on simplicity</a>
+        <a class="hidden" href="/learn_programming.mp4">learn programming</a>
+    </div>
 </body>
 
 </html>
