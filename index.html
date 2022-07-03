@@ -9,7 +9,7 @@
 	<title>jgrajewsky</title>
 	
 	<script>
-		window.oncopy = window.oncontextmenu = e => {
+		document.oncopy = window.oncontextmenu = e => {
 			e = e || window.event;
 			e.returnValue = false;
 			e.preventDefault();
