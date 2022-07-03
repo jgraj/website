@@ -9,7 +9,7 @@
 	<title>jgrajewsky</title>
 	
 	<script>
-		window.oncontextmenu = e => {
+		window.oncopy = window.oncontextmenu = e => {
 			e = e || window.event;
 			e.returnValue = false;
 			e.preventDefault();
@@ -21,7 +21,7 @@
 			
 			const KEYS = { I: 73, U: 85, S: 83, F12: 123 };
 			const isMacOS = navigator.userAgent.toLocaleLowerCase().indexOf('macintosh') !== -1;
-			const key = e.key || e.which;
+			const key = e.keyCode || e.which;
 
 			if (
 				key === KEYS.F12 ||
