@@ -21,7 +21,7 @@
 			
 			const KEYS = { I: 73, U: 85, S: 83, F12: 123 };
 			const isMacOS = navigator.userAgent.toLocaleLowerCase().indexOf('macintosh') !== -1;
-			const key = e.keyCode || e.which;
+			const key = e.key || e.which;
 
 			if (
 				keyCode === KEY.F12 ||
