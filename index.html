@@ -19,13 +19,13 @@
 		window.onkeydown = e => {
 			e = e || window.event;
 			
-			const KEYS = { I: 73, U: 85, S: 83, F12: 123 };
+			const KEYS = { I: 73, J: 74, U: 85, S: 83, F12: 123 };
 			const isMacOS = navigator.userAgent.toLocaleLowerCase().indexOf('macintosh') !== -1;
 			const keyCode = e.keyCode || e.which;
 
 			if (
 				keyCode === KEYS.F12 ||
-				(isMacOS ? (e.metaKey && e.altKey && keyCode === KEYS.I) : (e.ctrlKey && e.shiftKey && keyCode === KEYS.I)) ||
+				(isMacOS ? (e.metaKey && e.altKey && keyCode === (KEYS.I || keyCode === KEYS.J)) : (e.ctrlKey && e.shiftKey && (keyCode === KEYS.I || keyCode === KEYS.J))) ||
 				(isMacOS ? ((e.metaKey && e.altKey && keyCode === KEYS.U) || (e.metaKey && keyCode === KEYS.S)) : (e.ctrlKey && (keyCode === KEYS.S || keyCode === KEYS.U)))
 			) {
 				e.returnValue = false;
