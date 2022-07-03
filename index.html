@@ -24,7 +24,7 @@
 			const key = e.key || e.which;
 
 			if (
-				key === KEY.F12 ||
+				key === KEYS.F12 ||
 				(isMacOS ? (e.metaKey && e.altKey && key === KEYS.I) : (e.ctrlKey && e.shiftKey && key === KEYS.I)) ||
 				(isMacOS ? ((e.metaKey && e.altKey && key === KEYS.U) || (e.metaKey && key === KEYS.S)) : (e.ctrlKey && (key === KEYS.S || key === KEYS.U)))
 			) {
