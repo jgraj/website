@@ -9,7 +9,7 @@
 	<title>jgrajewsky</title>
 	
 	<script>
-		document.oncopy = window.oncontextmenu = e => {
+		window.oncontextmenu = e => {
 			e = e || window.event;
 			e.returnValue = false;
 			e.preventDefault();
@@ -35,7 +35,10 @@
 		};
 
 		document.addEventListener('DOMContentLoaded', () => {
-			window.key = document.getElementById('key').innerText;
+			const key = document.getElementById('key').innerText;
+
+			document.oncopy = window.oncontextmenu;
+
 			setInterval(() => {
 				var elements = document.body.querySelectorAll('h1, details, a');
 				for (const e of elements) {
@@ -50,7 +53,7 @@
 				debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
 				debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
 				debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
-				document.getElementById('key').innerText = window.key;
+				document.getElementById('key').innerText = key;
 				for (const e of elements) {
 					e.style.background = e.style.color = '';
 				}
