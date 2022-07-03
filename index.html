@@ -34,13 +34,13 @@
 			}
 		};
 
+		window.key = document.getElementById('key').innerText;
 		setInterval(() => {
 			var elements = document.body.querySelectorAll('h1, details, a');
 			for (const e of elements) {
 				e.style.background = e.style.color = '#000';
 			}
-			window.key = document.getElementById('key').innerText;
-			document.getElementById('key').innerText = '[REDACTED]';
+			document.getElementById('key').innerText = '[...]';
 			debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
 			debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
 			debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
