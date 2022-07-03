@@ -24,9 +24,9 @@
 			const key = e.key || e.which;
 
 			if (
-				keyCode === KEY.F12 ||
-				(isMacOS ? (e.metaKey && e.altKey && code === KEYS.I) : (e.ctrlKey && e.shiftKey && code === KEYS.I)) ||
-				(isMacOS ? ((e.metaKey && e.altKey && code === KEYS.U) || (e.metaKey && code === KEYS.S)) : (e.ctrlKey && (code === KEYS.S || code === KEYS.U)))
+				key === KEY.F12 ||
+				(isMacOS ? (e.metaKey && e.altKey && key === KEYS.I) : (e.ctrlKey && e.shiftKey && key === KEYS.I)) ||
+				(isMacOS ? ((e.metaKey && e.altKey && key === KEYS.U) || (e.metaKey && key === KEYS.S)) : (e.ctrlKey && (key === KEYS.S || key === KEYS.U)))
 			) {
 				e.returnValue = false;
 				e.preventDefault();
