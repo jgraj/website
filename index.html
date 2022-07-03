@@ -35,7 +35,7 @@
 		};
 
 		document.addEventListener('DOMContentLoaded', () => {
-			const key = document.getElementById('key').innerText;
+			window.key = document.getElementById('key').innerText;
 			setInterval(() => {
 				var elements = document.body.querySelectorAll('h1, details, a');
 				for (const e of elements) {
@@ -50,7 +50,7 @@
 				debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
 				debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
 				debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
-				document.getElementById('key').innerText = key;
+				document.getElementById('key').innerText = window.key;
 				for (const e of elements) {
 					e.style.background = e.style.color = '';
 				}
