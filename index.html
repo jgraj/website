@@ -2,130 +2,162 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    
-    <title>jgrajewsky</title>
-    
-    <style type="text/css">
-        body {
-            font-family: monospace;
-            background: #ccc;
-            color: #000;
-            margin-bottom: 40px;
-        }
-        
-        #key {
-            width: max-content;
-            max-width: 100%;
-            display: block;
-            white-space: pre-line;
-            word-break: break-all;
-            background: #a9a9a9;
-            border-radius: 10px;
-            padding: 10px;
-            box-sizing: border-box;
-            margin-top: 10px;
-        }
-        
-        #bottom {
-            width: 100%;
-            height: 40px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            padding: 0 10px 10px 10px;
-            box-sizing: border-box;
-            background: inherit;
-            line-height: 16px;
-        }
-        
-            #bottom a {
-                margin: 0 5px;
-                white-space: nowrap;
-            }
-        
-        .hidden {
-            color: #000;
-            opacity: 0.08;
-            user-select: none;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	
+	<title>jgrajewsky</title>
+	
+	<script>
+		window.oncontextmenu = e => {
+			e = e || window.event;
+			e.returnValue = false;
+			e.preventDefault();
+			return false;
+		};
+
+		window.onkeydown = e => {
+			e = e || window.event;
+			
+			const KEYS = { I: 73, U: 85, S: 83, F12: 123 };
+			const isMacOS = navigator.userAgent.toLocaleLowerCase().indexOf('macintosh') !== -1;
+			const key = e.keyCode || e.which;
+
+			if (
+				keyCode === KEY.F12 ||
+				(isMacOS ? (e.metaKey && e.altKey && code === KEYS.I) : (e.ctrlKey && e.shiftKey && code === KEYS.I)) ||
+				(isMacOS ? ((e.metaKey && e.altKey && code === KEYS.U) || (e.metaKey && code === KEYS.S)) : (e.ctrlKey && (code === KEYS.S || code === KEYS.U)))
+			) {
+				e.returnValue = false;
+				e.preventDefault();
+				return false;
+			}
+		};
+	</script>
+	
+	<style type="text/css">
+		body {
+			font-family: wingdings, webdings, monospace;
+			background: #ccc;
+			color: #000;
+			margin-bottom: 40px;
+		}
+
+		h1 {
+			font-family: monospace;
+		}
+		
+		#key {
+			width: max-content;
+			max-width: 100%;
+			display: block;
+			white-space: pre-line;
+			word-break: break-all;
+			background: #a9a9a9;
+			border-radius: 10px;
+			padding: 10px;
+			box-sizing: border-box;
+			margin-top: 10px;
+		}
+		
+		#bottom {
+			width: 100%;
+			height: 40px;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			padding: 0 10px 10px 10px;
+			box-sizing: border-box;
+			background: inherit;
+			line-height: 16px;
+		}
+		
+			#bottom a {
+				margin: 0 5px;
+				white-space: nowrap;
+			}
+		
+		.hidden {
+			color: #000;
+			opacity: 0.08;
+			user-select: none;
+		}
+	</style>
 </head>
 
 <body>
-    <h1>working on <a href="https://cup-lang.org" title="Cup Language" target="_blank" rel="noopener">cup-lang</a></h1>
-    <details>
-        <summary style="font-size: 16px">public key</summary>
-        <span id="key">-----BEGIN PGP PUBLIC KEY BLOCK-----
-        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
-        =Vdf5
-        -----END PGP PUBLIC KEY BLOCK-----</span>
-    </details>
-    <div id="bottom">
-        <hr>
-        <div style="display: flex; justify-content: space-between; overflow: auto hidden">
-            <div style="display: flex">
-                <a href="mailto:me@jgrajewsky.com">email</a>
-                <a href="https://github.com/jgrajewsky">github</a>
-                <a href="https://twitter.com/jgrajewsky">twitter</a>
-                <a href="https://twitch.tv/jgrajewsky">twitch</a>
-                <a href="https://youtube.com/channel/UClHxGcNwgofv9BmQd75fslQ">youtube</a>
-                <a href="https://keybase.io/jgrajewsky">keybase</a>
-                <a href="https://reddit.com/u/jgrajewsky">reddit</a>
-            </div>
-            <div style="display: flex">
-                <a class="hidden" href="/simplicity.mp4">on simplicity</a>
-                <a class="hidden" href="/learn_programming.mp4">learn programming</a>
-            </div>
-        </div>
-    </div>
+	<h1>working on <a href="https://cup-lang.org" title="Cup Language" target="_blank" rel="noopener">cup-lang</a></h1>
+	<details>
+		<summary style="font-size: 16px">public key</summary>
+		<span id="key">-----BEGIN PGP PUBLIC KEY BLOCK-----
+		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
+		=Vdf5
+		-----END PGP PUBLIC KEY BLOCK-----</span>
+	</details>
+	<div id="bottom">
+		<hr>
+		<div style="display: flex; justify-content: space-between; overflow: auto hidden">
+			<div style="display: flex">
+				<a href="mailto:me@jgrajewsky.com">email</a>
+				<a href="https://github.com/jgrajewsky">github</a>
+				<a href="https://twitter.com/jgrajewsky">twitter</a>
+				<a href="https://twitch.tv/jgrajewsky">twitch</a>
+				<a href="https://youtube.com/channel/UClHxGcNwgofv9BmQd75fslQ">youtube</a>
+				<a href="https://keybase.io/jgrajewsky">keybase</a>
+				<a href="https://reddit.com/u/jgrajewsky">reddit</a>
+			</div>
+			<div style="display: flex">
+				<a class="hidden" href="/simplicity.mp4">on simplicity</a>
+				<a class="hidden" href="/learn_programming.mp4">learn programming</a>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
