@@ -59,15 +59,20 @@
 	</script>
 	
 	<style type="text/css">
+		@font-face {
+			font-family: "empty";
+			src: url("/empty.ttf");
+		}
+		
 		body {
-			font-family: wingdings, webdings, symbol, monospace;
+			font-family: monospace;
 			background: #ccc;
 			color: #000;
 			margin-bottom: 40px;
 		}
-
-		h1 {
-			font-family: monospace;
+		
+		details {
+			font-family: wingdings, webdings, symbol, empty;
 		}
 		
 		#key {
@@ -92,6 +97,7 @@
 			padding: 0 10px 10px 10px;
 			box-sizing: border-box;
 			background: inherit;
+			font-family: monospace;
 			line-height: 16px;
 		}
 		
