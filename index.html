@@ -72,7 +72,23 @@
 				border-radius: 2px;
 				margin: 4px;	
 			}
-		
+			
+		#realistic-elephant {
+			position: fixed;
+			bottom: var(--footer-height);
+			right: -170px;
+			transition: right 500ms linear;
+			cursor: pointer;
+		}
+			
+			#realistic-elephant:hover {
+				right: -100px !important;
+			}
+			
+			#realistic-elephant-trigger:checked ~ #realistic-elephant {
+				right: 100%;
+			}
+
 		#footer {
 			width: 100%;
 			height: var(--footer-height);
@@ -103,6 +119,10 @@
 		<div class="color" style="background:var(--green)"></div>
 		<div class="color" style="background:var(--blue)"></div>
 	</a>
+	<input id="realistic-elephant-trigger" type="checkbox" style="display:none">
+	<label id="realistic-elephant" for="realistic-elephant-trigger">
+		<img src="data:image/png;base64,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">
+	</label>
 	<div id="footer">
 		<hr style="border-color:var(--gray)">
 		<div style="display:flex;justify-content:space-between;overflow:auto hidden">
