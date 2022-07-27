@@ -6,13 +6,43 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 	
-	<style type="text/css">		
+	<style type="text/css">
+		:root {
+			--footer: 45px;
+
+			color-scheme: dark;
+			--background: #282828;
+			--foreground: #ebdbb2;
+			--red: #cc241d;
+			--yellow: #d79921;
+			--green: #98971a;
+			--blue: #458588;
+			--gray: #a89984;
+		}
+		
+		@media (prefers-color-scheme: light) {
+			:root {
+				color-scheme: light;
+				--background: #fbf1c7;
+				--foreground: #3c3836;
+				--gray: #7c6f64;
+			}
+		}
+
 		body {
 			font-family: monospace, monospace;
-			background: #ccc;
-			color: #000;
-			margin-bottom: 40px;
+			background: var(--background);
+			color: var(--foreground);
+			margin-bottom: var(--footer);
 		}
+
+		a {
+			transition: transform 50ms;
+		}
+
+			a:active {
+				transform: translateY(2px);
+			}
 		
 		#key {
 			width: max-content;
@@ -20,7 +50,8 @@
 			display: block;
 			white-space: pre-line;
 			word-break: break-all;
-			background: #a9a9a9;
+			background: var(--yellow);
+			color: var(--background);
 			border-radius: 10px;
 			padding: 10px;
 			box-sizing: border-box;
@@ -29,100 +60,43 @@
 		
 		#bottom {
 			width: 100%;
-			height: 40px;
+			height: var(--footer);
 			position: fixed;
 			bottom: 0;
 			left: 0;
 			padding: 0 10px 10px 10px;
 			box-sizing: border-box;
 			background: inherit;
-			font-family: monospace;
-			line-height: 16px;
 		}
 		
 			#bottom a {
 				margin: 0 5px;
 				white-space: nowrap;
 			}
-		
-		.hidden {
-			color: #000;
-			opacity: 0.15;
-			user-select: none;
-		}
 	</style>
 </head>
 
 <body>
-	<h1>working on <a title="Cup" href="https://bestlang.lol" target="_blank" rel="noopener">cup-lang</a></h1>
+	<h1>working on <a style="color:var(--red)" title="Cup" href="https://bestlang.lol" target="_blank" rel="noopener">cup-lang</a></h1>
 	<details>
 		<summary style="font-size:16px">public key</summary>
-		<span id="key">-----BEGIN PGP PUBLIC KEY BLOCK-----
-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
-=Vdf5
------END PGP PUBLIC KEY BLOCK-----</span>
+		<span id="key">-----BEGIN PGP PUBLIC KEY BLOCK-----<br>mQINBGLhI1cBEADXGqYMxJ3Sk0+bnllCOFpskJx//rW/9Eo8ScI/61fUHE1sy8AZ<br>vFOqZDTeqfsF+tsVdvugcnZpg//LT6ZZr2DrOav2Gqd4Ir34x11TgHejP4R3OH8r<br>bIsXueNZcKScLmhTu2oCL2coz2GUbBf1zfduFBDri+U2augEcmvsnjAjJFbazUbp<br>uTOb6CmWNYDz7RXwMsXc1AgP/ukAoxC7R79/5jLg38lKZfq2Xj1IR8LhhpHPOTx4<br>8CNlB7L6+x1RRAlCBOSA2dVTxkmbETt0vWXmRWHo10gt1Uoej3M+pMBB9IOFG6lp<br>8FsQRi7FQedt/U0J/T1812rh8807YnAFYR5vPhmfR5DED8XOLMpYXMq7U4EPcBYs<br>ZxSpHRkPfnNd/Zj9qJx2TPFC4gfhStvBmez8eWS5kXiuhk7HAThRV1199phcIlfG<br>3BwrGEYuXi1ICt0bJk5SNOF2/CQTyoGk5FZNviV2ZOjURt+ebqAmHiKu55Xa4vz0<br>x7EUV3J/nog3VKtjYYMZctBGJc1sANr4VtIbUY1CEwOGVWw9Ja9yYC+oYe1xOYY/<br>rA26F2GDzp/F4I01tl1tzNtxB7PV+WWidBI5Jf+f37nrGBOVcbDwUzVJRCBIilhC<br>nL4DgBICEkw7wv305xQYb5z8nxNXsPPrYcodH/UgQdqbfVGCOysc/TgKSQARAQAB<br>tClKdWxpYW4gR3JhamV3c2tpIChqZ3JhaikgPGpncmFqQGpncmFqLm1lPokCTgQT<br>AQgAOBYhBKvGycxygRpgimRG1voWCJ8ivuSzBQJi4SNXAhsDBQsJCAcCBhUKCQgL<br>AgQWAgMBAh4BAheAAAoJEPoWCJ8ivuSzrHwP/RYGyJVfHZN9euVLEDp3jg/PmCr9<br>KvirdQD+or/yvElb29H8rIiZeYIG0LEZvDpSag9fdESaMDF4itLZtdrrGSrFo/tT<br>/7ibmP5Rw40mqjv55YEnvWXqZcyt5dgiRxry2v6z3CAVFG5CZbLqSkRM/+Q/M8cC<br>gOdWEfQmV3tZLWhf7enKm9yLmLw2RJn/GQaI2VnWJHMPdgQcqO3tHRKMkzREaXg+<br>LS0X6Q4XNlXnsaTwaOGZORwQqjRZLwtFJ+kgVYfqWIRfJDKqgYv7VANOPC8cUfBv<br>SDB8cKlYuV4SbWW4RztPSV77yXfr3PCTuDdHu3cCCpHRLVUJ+7QTR+S19SkEY5F5<br>p4QAmyYUV288lfMH94FZqqVeKHR3alLmYChuc+rc6PvblJVfSgUTFWAuZuTJDERa<br>YIZze4AhCqMrozJzeG1RU5e22lP6wLhvq3aiI8QUPy4DMjCaYbhecruQ92rhqxby<br>PPWLtSMDPDmbsjHcu28pJyB3Ko7bCzs4o+2EsKtQ8kKN99I0R2V6hwIXhZG5717I<br>7SSXtyMvcg9965b0whXI8cJplj++6r6YiiNKNAuUTE59ptFI7vcKcrnvY8ofxM93<br>u72LW76tiAKJPrykFA/ysbEewzudNXiG/YzG75WOFM6yQl17c7Tyn9FNq78iFMQ+<br>bDO22GlXFYQ8gaOEuQINBGLhI1cBEADZs8LIYQjmjLUgnP+9YBdzcbafaooJBEzF<br>G1AQgUKLcTKXoHjWwL3YJoT00B+RGVUrlR2t5j3SlZeUCMBZnNnhSWg6ynyImXFv<br>VBdgvkPvFTm5BsZahqKldYWP8dz2zH9N2MGFeA86Xl458mme2d78jQ6vPZ3/BcDb<br>z8Ij77nFrzhyu4fSXgIws66uBso8e/oXhSb8XiTwHDvdjmnkQFsZCMbfjiSlsm7h<br>suA6xTQdnGtsih+2KHT/7Swj7V8hYCFcwGroMIs/t52wfu3QfD9twonXQ39lJC2R<br>sUwoPvzUjackgBz0yV2pQvSIsSMDn7SArSOGrQdJa0lske1ukmwLSoXyYbRxHsu2<br>aBf9Xjr3c6IK0S0QXEGIneoonjMj0JL3JwXJGVetFdEgdxw8YmzsF5PYkOZjw0GT<br>e9jgit3ZdTgguvZ8o6PqJG5COPDtul349swbFzMLoO+3/Qxt6ncTip1OCkfAXIOv<br>CFXUi/tXoR9v5TeGMDhGmKUr2m5NwlkZ/0otpb1PKSxMh2LAM+j1vEFhbs/OLbJS<br>8+e/MDzbAMprg8qGsuZ6u8cVPrjzCf7ZDQUROShuglJ+AjRvnRRV2SxO/JAe6ypk<br>mvvQZrhhunvS3kNJtEmvCWCQd1Y7u5ZvDcjijUP67IlDNCi5z0ceGG4PXzgFxTyd<br>J72fSzGplwARAQABiQI2BBgBCAAgFiEEq8bJzHKBGmCKZEbW+hYInyK+5LMFAmLh<br>I1cCGwwACgkQ+hYInyK+5LOy9A/+LaahPq/9N5tZq1dRI2ybYUd9XtSrk6xJrbvS<br>ifH69f2D5AXTOGixvU/0oZqQi8M/V5vMdTT0ZMR+o2nRy0H13D37P8D7GC+/sVxC<br>47Wn8PliGjTS5xhkeFp/q6EXKJjojRlDG+BwKoINoJXMtHp9QpZVz/P4/cyL2mIy<br>P+OoDKIgY5+QJE4TyqDejGFL4v7HZRybCWFd+YZplq3EVPpUfJjAuQfingyhBKCH<br>jzewwD67ABYt99c+N40cWQHtxKjwx2VszySrYC+QAL1rW2T9f/DwK5y+fwE8H1lB<br>C9CtAASTmMSlhykBrWpsyezFNnnta8EfoAqAf8BnvRrlNhhJYvDEqehIMRvfohkM<br>2h5iZAu7W4M/0fR+mdHgLsY1gKAoohzIbtgOgSDdKr8tVHkATrD6oLjywfVacEn5<br>aC2nO5ezstOqVl4RJrCzgIpweqGNCGpYUOd1mJ1YRI7jvOKGL3tMkosu6XmO1tcm<br>OT1VuBIY6TapXDg8ROFum6CsMKYH68lDEPw4gam5hT6Nv9AA3zfi977oJmxiQ/2G<br>8UcYFzEki1oCMMTRrv36DEhCwb5Sn6PKzvzFf4tqI9MHaRRumZ9GBSKDKyH+VUOu<br>c3VmoTdblo3fXVM35ALRhXVkuEF9SqaqQxtzyjlLsThGm5D2Gu36+0GZXRUNKiuv<br>BIusd6E=<br>=6bfF<br>-----END PGP PUBLIC KEY BLOCK-----</span>
 	</details>
 	<div id="bottom">
-		<hr>
+		<hr style="color:var(--gray)">
 		<div style="display:flex;justify-content:space-between;overflow:auto hidden">
 			<div style="display:flex">
-				<a href="mailto:anything@jgraj.me">email</a>
-				<a href="https://github.com/jgraj">github</a>
-				<a href="https://twitch.tv/jgrajewsky">twitch</a>
-				<a href="https://youtube.com/jgraj">youtube</a>
-				<a href="https://twitter.com/jgrajewsky">twitter</a>
-				<a href="https://keybase.io/jgrajewsky">keybase</a>
-				<a href="https://reddit.com/u/jgrajewsky">reddit</a>
+				<a style="color:var(--green)" href="mailto:encwypt_pwease@jgraj.me">email</a>
+				<a style="color:var(--green)" href="https://github.com/jgraj">github</a>
+				<a style="color:var(--green)" href="https://twitch.tv/jgrajewsky">twitch</a>
+				<a style="color:var(--green)" href="https://youtube.com/jgraj">youtube</a>
+				<a style="color:var(--green)" href="https://twitter.com/jgrajewsky">twitter</a>
+				<a style="color:var(--green)" href="https://keybase.io/jgrajewsky">keybase</a>
+				<a style="color:var(--green)" href="https://reddit.com/u/jgrajewsky">reddit</a>
 			</div>
 			<div style="display:flex">
-				<a class="hidden" href="/simplicity.mp4">on simplicity</a>
-				<a class="hidden" href="/learn_programming.mp4">learn programming</a>
+				<a style="color:var(--blue)" href="/simplicity.mp4">on simplicity</a>
+				<a style="color:var(--blue)" href="/learn_programming.mp4">learn programming</a>
 			</div>
 		</div>
 	</div>
