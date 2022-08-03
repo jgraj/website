@@ -10,7 +10,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
 	<meta name="theme-color" content="#282828">
-	
+
 	<style type="text/css">
 		:root {
 			--footer-height: 45px;
@@ -24,7 +24,7 @@
 			--blue: #458588;
 			--gray: #a89984;
 		}
-		
+
 		@media (prefers-color-scheme: light) {
 			:root {
 				color-scheme: light;
@@ -49,7 +49,7 @@
 			a:active {
 				transform: translateY(2px);
 			}
-		
+
 		#key {
 			width: max-content;
 			max-width: 100%;
@@ -63,7 +63,7 @@
 			box-sizing: border-box;
 			margin-top: 10px;
 		}
-		
+
 		#colors {
 			position: absolute;
 			top: -7px;
@@ -77,8 +77,16 @@
 				border-radius: 2px;
 				margin: 4px;	
 			}
-			
+
+		@keyframes realistic-elephant-peek {
+			0% { right: -205px; }
+			80% { right: -205px; }
+			90% { right: -170px; }
+			100% { right: -205px; }
+		}
+		
 		#realistic-elephant {
+			animation: 30s infinite linear realistic-elephant-peek;
 			position: fixed;
 			bottom: var(--footer-height);
 			right: -170px;
@@ -86,11 +94,8 @@
 			cursor: pointer;
 		}
 
-			#realistic-elephant:hover {
-				right: -100px !important;
-			}
-			
 			#realistic-elephant-trigger:checked ~ #realistic-elephant {
+				animation: none;
 				right: 100% !important;
 			}
 
@@ -104,7 +109,7 @@
 			box-sizing: border-box;
 			background: inherit;
 		}
-		
+
 			#footer a {
 				margin: 0 5px;
 				white-space: nowrap;
