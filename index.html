@@ -66,7 +66,7 @@
 
 		#colors {
 			position: absolute;
-			top: -7px;
+			top: 0;
 			right: 0;
 			display: flex;
 		}
@@ -77,6 +77,12 @@
 				border-radius: 2px;
 				margin: 4px;	
 			}
+
+		@media only screen and (max-width: 400px) {
+			#colors {
+				flex-direction: column;
+			}
+		}
 
 		@keyframes realistic-elephant-peek {
 			0% { right: -205px; }
