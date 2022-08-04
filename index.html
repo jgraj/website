@@ -80,17 +80,17 @@
 		}
 
 		@keyframes realistic-elephant-peek {
-			0% { right: -205px; }
-			80% { right: -205px; }
-			90% { right: -170px; }
-			100% { right: -205px; }
+			0% { transform: translateX(0); }
+			80% { transform: translateX(0); }
+			90% { transform: translateX(-35px); }
+			100% { transform: translateX(0); }
 		}
 		
 		#realistic-elephant {
 			animation: 30s infinite linear realistic-elephant-peek;
 			position: fixed;
 			bottom: var(--footer-height);
-			right: -170px;
+			right: -205px;
 			transition: right 500ms linear;
 			cursor: pointer;
 		}
