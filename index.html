@@ -20,14 +20,14 @@
 			--blue: #458588;
 		}
 
-		@keyframes gradient {
-			0% { background-position: 0% 0%; }
-			50% { background-position: 100% 0%; }
-			100% { background-position: 0% 0%; }
-		}
-
 		html, body {
 			min-height: 100%;
+		}
+		
+		@keyframes gradient {
+			0% { background-position-x: 100%; }
+			50% { background-position-x: 0%; }
+			100% { background-position-x: 100%; }
 		}
 
 		body {
@@ -37,7 +37,7 @@
 			background-size: 400% 100%;
 			background-attachment: fixed;
 			color: #000;
-			animation: gradient 60s ease infinite;
+			animation: gradient 60s linear infinite;
 			margin: 5% 5% calc(var(--footer-height) + 5%) 5%;
 		}
 
