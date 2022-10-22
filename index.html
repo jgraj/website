@@ -19,6 +19,7 @@
 		:root {
 			--footer-height: 45px;
 			--bg: #0000000d;
+			--fg: #000;
 		}
 
 		html, body {
@@ -41,7 +42,7 @@
 			background: linear-gradient(45deg, #cc241d, #98971a, #458588);
 			background-size: 400% 100%;
 			background-attachment: fixed;
-			color: #000;
+			color: var(--fg);
 			margin: 5% 5% calc(var(--footer-height) + 5%) 5%;
 			animation: fade 1s ease-in-out, gradient 60s linear infinite;
 		}
@@ -61,7 +62,7 @@
 		blockquote {
 			background: var(--bg);
 			padding: 10px; margin: 20px 0;
-			border: 2px dashed #000;
+			border: 2px dashed var(--fg);
 			border-radius: 20px;
 		}
 
@@ -86,7 +87,7 @@
 		#line {
 			position: absolute; top: -1px; left: 0;
 			width: 100%;
-			border-top: 2px dashed #000;
+			border-top: 2px dashed var(--fg);
 		}
 	</style>
 </head>
