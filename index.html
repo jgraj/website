@@ -18,7 +18,6 @@
 	<style type="text/css">
 		:root {
 			--footer-height: 45px;
-			--block: #0000000d;
 			--bg: #fbf1c7;
 			--bg2: #ebdbb2;
 			--fg: #3c3836;
@@ -26,7 +25,6 @@
 
 		@media (prefers-color-scheme: dark) {
 			:root {
-				--block: #ffffff0d;
 				--bg: #282828;
 				--bg2: #3c3836;
 				--fg: #ebdbb2;
@@ -81,10 +79,10 @@
 			}
 
 		blockquote {
-			background: var(--block);
 			padding: 10px; margin: 20px 0;
 			border: 2px dashed var(--fg);
 			border-radius: 20px;
+			backdrop-filter: blur(2px);
 		}
 
 		.flex {
@@ -95,10 +93,9 @@
 			position: fixed; bottom: 0; left: 0;
 			display: flex; align-items: center;
 			width: 100%; height: var(--footer-height);
-			background: var(--block);
 			padding: 0 20px;
 			box-sizing: border-box;
-			backdrop-filter: blur(3px);
+			backdrop-filter: blur(2px);
 		}
 
 			#footer a {
