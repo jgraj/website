@@ -40,19 +40,16 @@
 			100% { opacity: 1; }
 		}
 
-		@keyframes bg {
-			0%   { background-size: 8px 8px; }
-			100% { background-size: 100% 100%; }
-		}
-
 		body {
 			font-family: 'Lato', sans-serif;
 			background: linear-gradient(45deg, var(--bg), var(--bg2));
+			background-size: 32px 32px;
 			background-position: 50% 50%;
 			background-attachment: fixed;
 			color: var(--fg);
 			margin: 5% 5% calc(var(--footer-height) + 5%) 5%;
-			animation: fade 800ms ease-in-out, bg 300s ease-in forwards;
+			animation: fade 800ms ease-in-out;
+			transition: background-position 100ms;
 		}
 
 		svg {
@@ -114,6 +111,14 @@
 			overflow: auto hidden;
 		}
 	</style>
+
+	<script type="text/javascript" defer>
+		window.onmousemove = e => {
+			const x = (e.clientX - window.innerWidth  / 2) / 50
+			const y = (e.clientY - window.innerHeight / 2) / 50
+			document.body.style.backgroundPosition = `calc(50% - ${x}px) calc(50% - ${y}px)`
+		}
+	</script>
 </head>
 
 <body>
