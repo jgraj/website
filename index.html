@@ -12,8 +12,6 @@
 	<style type="text/css">
 		:root {
 			--footer-height: 45px;
-			--bg: #070906;
-			--fg: #ecc0bf;
 		}
 
 		html, body {
@@ -21,13 +19,12 @@
 		}
 
 		@keyframes fade {
-			0%   { opacity: 0; }
-			100% { opacity: 1; }
+			from { opacity: 0; }
+			to   { opacity: 1; }
 		}
 
 		body {
 			font-family: 'Lato', sans-serif;
-			background: var(--bg); color: var(--fg);
 			margin: 5% 5% calc(var(--footer-height) + 5%) 5%;
 			animation: fade 800ms ease-in-out;
 		}
@@ -38,7 +35,7 @@
 
 		a {
 			display: inline-block;
-			color: var(--fg);
+			color: inherit;
 			transition: transform 50ms;
 		}
 
@@ -72,7 +69,7 @@
 		#footer-line {
 			position: absolute; top: -1px; left: 0;
 			width: 100%;
-			border-top: 2px dashed var(--fg);
+			border-top: 2px dashed;
 		}
 
 		#footer-content {
@@ -81,6 +78,18 @@
 			overflow: auto hidden;
 		}
 	</style>
+	<script>
+		function randomSeeded (seed) {
+			const x = Math.sin(seed) * 10000
+			return x - Math.floor(x)
+		}
+
+		window.addEventListener('load', () => {
+			const seed = Date.now() / 86400000 | 0
+			document.body.style.background = `hsl(${randomSeeded(seed) * 255 | 0},50%,20%)`
+			document.body.style.color = `hsl(${randomSeeded(seed + 1) * 255 | 0},50%,80%)`
+		})
+	</script>
 </head>
 
 <body>
