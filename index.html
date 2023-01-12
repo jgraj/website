@@ -92,18 +92,6 @@
 			overflow: auto hidden;
 		}
 	</style>
-	<script>
-		function randomSeeded (seed) {
-			const x = Math.sin(seed) * 10000
-			return x - Math.floor(x)
-		}
-
-		window.addEventListener('load', () => {
-			const seed = Date.now() / 86400000 | 0
-			document.body.style.background = `hsl(${randomSeeded(seed) * 255 | 0},50%,20%)`
-			document.body.style.color = `hsl(${randomSeeded(seed + 1) * 255 | 0},50%,80%)`
-		})
-	</script>
 </head>
 
 <body>
