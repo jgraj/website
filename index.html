@@ -45,11 +45,16 @@
 				transform: translateY(2px);
 			}
 		
+		@keyframes bg-flip {
+			50% { transform: translate(-50%, -50%) scaleX(-1); }
+		}
+		
 		#bg {
 			position: absolute; top: 50%; left: 50%;
 			transform: translate(-50%, -50%);
 		   	user-select: none;
 			pointer-events: none;
+			animation: bg-flip 800ms infinite;
 		}
 		
 		.note {
