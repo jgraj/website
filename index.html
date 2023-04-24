@@ -23,7 +23,7 @@
 	<style type="text/css">
 		body {
 			display: flex; flex-direction: column; gap: 10px;
-			background: #ff5555; color: #000;
+			background: #000; color: #000;
 			font: 1.25em 'Lato', sans-serif;
 			margin: 10px 0;
 		}
@@ -42,23 +42,19 @@
 				transform: translateY(2px);
 			}
 
-		#bg {
-			width: 256px; height: 256px;
-			position: fixed; top: 50%; left: 50%;
-			transform: translate(-50%, -50%);
-		   	user-select: none; pointer-events: none;
-			z-index: -1;
-		}
-
 		.note {
 			display: flex; align-items: center; gap: 0.4em;
-			background: #ffe0c0;
+			transition: all 1000ms;
 			padding: 15px 20px;
 			margin: 0 10px;
 			border: 2px solid;
 			border-radius: 20px;
-			box-shadow: 0 0 0 5px #fff;
+			box-shadow: 0 0 0 4px #fff;
 		}
+		
+			.note:hover {
+				background: #fff;
+			}
 		
 		@media screen and (min-width: 700px) and (min-height: 500px) {
 			.note {
@@ -72,8 +68,6 @@
 </head>
 
 <body>
-	<img id="bg" src="/icon.gif" draggable="false">
-	
 	<div class="note" style="flex-direction:column;left:21%;top:20%">
 		<a href="/simplicity.mp4"><q>An idiot admires complexity, a genius admires simplicity.</q></a> ― Terry A. Davis
 	</div>
