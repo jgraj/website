@@ -44,7 +44,7 @@
 
 		.note {
 			display: flex; align-items: center; gap: 0.4em;
-			transition: all 1000ms;
+			transition: background 1000ms;
 			padding: 15px 20px;
 			margin: 0 10px;
 			border: 2px solid;
@@ -65,20 +65,6 @@
 			}
 		}
 	</style>
-	
-	<script>
-		var notes = [...document.querySelectorAll('.circle')];
-		var count = notes.length;
-		setInterval(_ => {
-			for (let i = 0; i < count; ++i) {
-				const degToRad = Math.PI / 180; 
-				const x = 30 * Math.cos(360 / count * i * degToRad + Date.now()) + 50;
-				const y = 30 * Math.sin(360 / count * i * degToRad + Date.now()) + 50;
-				notes[i].style.left = x + '%';
-				notes[i].style.top = y + '%';
-			}
-		});
-	</script>
 </head>
 
 <body>
@@ -124,6 +110,21 @@
 		<svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
 		<a href="mailto:jgraj@ew.ski" target="_blank" rel="noopener">email</a>
 	</div>
+	
+	<script>
+		const notes = [...document.querySelectorAll('.circle')];
+		const count = notes.length;
+		const degToRad = Math.PI / 180;
+		setInterval(_ => {
+			for (let i = 0; i < count; ++i) {
+				const angle = 360 / count * i * degToRad + Date.now() / 100;
+				const x = 50 + 30 * Math.cos(angle);
+				const y = 50 + 30 * Math.sin(angle);
+				notes[i].style.left = x + '%';
+				notes[i].style.top = y + '%';
+			}
+		});
+	</script>
 </body>
 
 </html>
