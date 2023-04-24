@@ -69,13 +69,13 @@
 	<script>
 		var notes = [...document.querySelectorAll('.circle')];
 		var count = notes.length;
-		setInterval(() => {
+		setInterval(_ => {
 			for (let i = 0; i < count; ++i) {
 				const degToRad = Math.PI / 180; 
-				const x = 30 * Math.cos(360 / count * i * degToRad) + 50;
-				const y = 30 * Math.sin(360 / count * i * degToRad) + 50;
-				e.style.left = x + '%';
-				e.style.top = y + '%';
+				const x = 30 * Math.cos(360 / count * i * degToRad + Date.now()) + 50;
+				const y = 30 * Math.sin(360 / count * i * degToRad + Date.now()) + 50;
+				notes[i].style.left = x + '%';
+				notes[i].style.top = y + '%';
 			}
 		});
 	</script>
