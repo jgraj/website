@@ -63,24 +63,15 @@
 			music_audio.volume = 0.2;
 			const music_play = document.getElementById('music-play');
 			const music_pause = document.getElementById('music-pause');
-			function play() {
+			music_play.addEventListener('click', () => {
 				music_audio.play();
 				music_play.style.display = 'none';
 				music_pause.style.display = '';
-			}
-			function pause() {
+			});
+			music_pause.addEventListener('click', () => {
 				music_audio.pause();
 				music_play.style.display = '';
 				music_pause.style.display = 'none';
-			}
-			window.addEventListener('click', () => {
-				play();
-			});
-			music_play.addEventListener('click', () => {
-				play();
-			});
-			music_pause.addEventListener('click', () => {
-				pause();
 			});
 		});
 	</script>
